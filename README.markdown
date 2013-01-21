@@ -87,7 +87,7 @@ Or you can install from source:
 
 ```bash
     cd ~/Documents # or where you want to put the AXElements code
-    git clone git://github.com/Marketcircle/AXElements
+    git clone git://github.com/AXElements/AXElements
     cd AXElements && rake install
 ```
 
@@ -110,7 +110,7 @@ installed, remember to disable it like so:
 
 ## Getting Started
 
-The [wiki](http://github.com/Marketcircle/AXElements/wiki)
+The [wiki](http://github.com/AXElements/AXElements/wiki)
 is the best place to get started, it includes tutorials to help you get
 started. API documentation is also available on
 [rdoc.info](http://rdoc.info/gems/AXElements/frames).
@@ -123,13 +123,13 @@ as some of the technical the technical underpinnings of AXElements.
 
 ## Development
 
-[![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/Marketcircle/AXElements)
+[![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/AXElements/AXElements)
 
 AXElements has reached a point where the main focus is stability,
 documentation, and additional conveniences. It will be out of this
 world, so we're code naming the next version "Lunatone".
 
-![The Moon](https://github.com/Marketcircle/AXElements/raw/gh-pages/images/next_version.png)
+![The Moon](https://github.com/AXElements/AXElements/raw/gh-pages/images/next_version.png)
 
 Proper releases to rubygems will be made as milestones are reached.
 
@@ -137,7 +137,7 @@ Proper releases to rubygems will be made as milestones are reached.
 
 There are still a bunch of things that could be done to improve
 AXElements. Some of the higher level tasks are outlined in various
-[Github Issues](http://github.com/Marketcircle/AXElements/issues).
+[Github Issues](http://github.com/AXElements/AXElements/issues).
 Smaller items are peppered through the code base and marked with `@todo`
 tags.
 
