@@ -280,7 +280,7 @@ class AX::Element
     element   = self
     until qualifier.qualifies? element
       element = element.attribute :parent
-      return nil unless element
+      break unless element
     end
     element
   end
