@@ -448,26 +448,25 @@ module Accessibility::DSL
   # all search results have been returned.
   #
   # @overload wait_for_invalidation_of element
-  # @param element [AX::Element]
-  # @param filters [Hash]
-  # @option filters [Number] :timeout (5) in seconds
-  # @return [Boolean]
+  #   @param element [AX::Element]
+  #   @param filters [Hash]
+  #   @option filters [Number] :timeout (5) in seconds
+  #   @return [Boolean]
   #
-  # @example
+  #   @example
   #
-  #   wait_for_invalidation_of table.row(static_text: { value: 'Cake' })
+  #     wait_for_invalidation_of table.row(static_text: { value: 'Cake' })
   #
   # @overload wait_for_invalidation_of kind, filters = {}, &block
-  # @param element [#to_s]
-  # @param filters [Hash]
-  # @option filters [Number] :timeout (5) in seconds
-  # @return [Boolean]
+  #   @param element [#to_s]
+  #   @param filters [Hash]
+  #   @option filters [Number] :timeout (5) in seconds
+  #   @return [Boolean]
   #
-  # @example
+  #   @example
   #
-  #   wait_for_invalidation_of :row, parent: table, static_text: { value: 'Cake' }
+  #     wait_for_invalidation_of :row, parent: table, static_text: { value: 'Cake' }
   #
-  # @return [Boolean]
   def wait_for_invalidation_of element, filters = {}, &block
     timeout = filters[:timeout] || 5
     start   = Time.now
