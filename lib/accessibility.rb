@@ -98,7 +98,7 @@ class << Accessibility
   # Try to wrap an application object, just in case it is not quite ready
   # for accessibility yet.
   #
-  # @param [String]
+  # @param bundle [String]
   # @return [AX::Application]
   def try_wrapping bundle
     AX::Application.new bundle
