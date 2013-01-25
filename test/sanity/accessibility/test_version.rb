@@ -9,7 +9,7 @@ class TestAccessibilityVersion < MiniTest::Unit::TestCase
 
   def test_version_method
     assert_match Accessibility::VERSION, Accessibility.version
-    assert_match Accessibility::ENGINE, Accessibility.version
+    assert_match Accessibility::CODE_NAME, Accessibility.version
   end
 
 end
