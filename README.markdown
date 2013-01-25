@@ -24,12 +24,12 @@ The code from the demo video is right here:
     Accessibility.debug = true
 
     # Get a reference to the Finder and bring it to the front
-    finder = app_with_bundle_identifier 'com.apple.finder'
+    finder = AX::Application.new 'com.apple.finder'
     set_focus_to finder
 
     # Open a new window
     type "\\COMMAND+n"
-    sleep 1 # pause for "slow motion"
+    sleep 1 # pause for "slow motion" effect
 
     # Find and click the "Applications" item in the sidebar
     window = finder.main_window
