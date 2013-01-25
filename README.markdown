@@ -130,7 +130,7 @@ AXElements has reached a point where the main focus is stability,
 documentation, and additional conveniences. It will be out of this
 world, so we're code naming the next version "Lunatone".
 
-![The Moon](https://github.com/AXElements/AXElements/raw/gh-pages/images/next_version.png)
+![The Moon](https://raw.github.com/AXElements/axelements.github.com/master/images/next_version.png)
 
 Proper releases to rubygems will be made as milestones are reached.
 
