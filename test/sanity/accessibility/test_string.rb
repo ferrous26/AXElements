@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-require 'test/runner'
+require 'test/helper'
 require 'accessibility/string'
 
 class TestAccessibilityStringLexer < MiniTest::Unit::TestCase

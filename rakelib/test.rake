@@ -21,24 +21,16 @@ task :clobber_fixture do
 end
 task :clobber => :clobber_fixture
 
-require 'rake/testtask'
 namespace :test do
-  Rake::TestTask.new(:sanity) do |t|
-    t.libs   << '.'
-    t.pattern = "test/sanity/**/test_*.rb"
+  desc 'Run sanity tests (basic, fast stuff)'
+  task :sanity => [:ext, :fixture] do
+    files = FileList['test/sanity/**/test_*.rb']
+    sh "./test/runner #{files}"
   end
-  task :sanity => [:ext, :fixture]
 
-  Rake::TestTask.new(:integration) do |t|
-    t.libs   << '.'
-    t.pattern = "test/integration/**/test_*.rb"
+  desc 'Run integration tests (complex, slow stuff)'
+  task :integration => [:ext, :fixture] do
+    files = FileList['test/integration/**/test_*.rb']
+    sh "./test/runner #{files}"
   end
-  task :integration => [:ext, :fixture]
-
-  desc 'Run tests for the string parser'
-  Rake::TestTask.new(:string) do |t|
-    t.libs   << '.'
-    t.pattern = "test/sanity/accessibility/test_string.rb"
-  end
-  task :string => :ext
 end

@@ -1,4 +1,4 @@
-require 'test/runner'
+require 'test/helper'
 require 'accessibility/qualifier'
 
 class TestNSDictionaryExtensions < MiniTest::Unit::TestCase

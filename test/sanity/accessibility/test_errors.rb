@@ -1,4 +1,4 @@
-require 'test/runner'
+require 'test/helper'
 require 'accessibility/errors'
 
 class TestAccessibilityErrors < MiniTest::Unit::TestCase

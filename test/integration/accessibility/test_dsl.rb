@@ -12,8 +12,14 @@ class TestAccessibilityDSL < MiniTest::Unit::TestCase
     @dsl ||= DSL.new
   end
 
-  def text_area;       @@text_area ||= app.main_window.text_area                             end
-  def pop_up;          @@pop_up    ||= app.main_window.pop_up                                end
+  def text_area
+    @@text_area ||= app.main_window.text_area
+  end
+
+  def pop_up
+    @@pop_up ||= app.main_window.pop_up
+  end
+
   def pref_window
     app.children.find { |x|
       if x.respond_to? :title
@@ -54,7 +60,7 @@ class TestAccessibilityDSL < MiniTest::Unit::TestCase
   end
 
   def test_application_with_pid
-    assert_equal app, dsl.app_with_pid(PID)
+    assert_equal app, dsl.app_with_pid(APP_PID)
   end
 
   def test_set_focus_to

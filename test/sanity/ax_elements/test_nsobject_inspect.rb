@@ -1,4 +1,4 @@
-require 'test/runner'
+require 'test/helper'
 
 if on_macruby?
 class TestNSObjectExtensions < MiniTest::Unit::TestCase

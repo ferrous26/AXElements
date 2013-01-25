@@ -1,4 +1,4 @@
-require 'test/runner'
+require 'test/helper'
 require 'ax_elements'
 
 class TestDefaults < MiniTest::Unit::TestCase

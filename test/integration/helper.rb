@@ -1,3 +1,4 @@
+require 'test/fixture_app'
 require 'test/helper'
 require 'ax_elements'
 
@@ -8,7 +9,7 @@ Accessibility.debug = true
 class MiniTest::Unit::TestCase
 
   def app
-    @@app ||= AX::Application.new PID
+    @@app ||= AX::Application.new APP_PID
   end
 
 end

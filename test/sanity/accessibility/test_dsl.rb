@@ -1,3 +1,4 @@
+require 'test/fixture_app'
 require 'test/helper'
 require 'accessibility/dsl'
 

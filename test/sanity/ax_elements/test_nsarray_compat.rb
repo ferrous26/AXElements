@@ -1,4 +1,4 @@
-require 'test/runner'
+require 'test/helper'
 require 'ax_elements/nsarray_compat'
 
 class TestNSArrayCompat < MiniTest::Unit::TestCase
