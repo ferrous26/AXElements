@@ -64,12 +64,12 @@ The code from the demo video is right here:
 
 ## Getting Setup
 
-You will need Ruby 1.9.3 or a MacRuby nightly build for
-installation. You can get help installing Ruby 1.9.3 from the
-[Ruby Website](http://www.ruby-lang.org), or help installing MacRuby
-from the
-[Setup MacRuby](https://github.com/MacRuby/MacRuby/wiki/Setting-up-MacRuby)
-guide on Github.
+You will need to have Ruby installed to use AXElements. Since AXElements
+depends on various OS X frameworks, only Rubies with mature support for
+C extensions or bridge support can run AXElements. Supported rubies are:
+
+  - [Ruby 1.9.3+](http://www.ruby-lang.org/)
+  - [MacRuby 0.13+](http://macruby.org/) (v0.13 is a nightly build right now)
 
 You will also need to make sure you "enable access for assistive devices".
 This can be done in System Preferences in the Universal Access section:
