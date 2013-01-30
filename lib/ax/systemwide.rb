@@ -1,5 +1,5 @@
 require 'ax/element'
-require 'accessibility/string'
+require 'accessibility/keyboard'
 
 ##
 # Represents the special `SystemWide` accessibility object.
@@ -9,7 +9,7 @@ require 'accessibility/string'
 # of the system wide object when you need to use it (even though they
 # are all the same thing).
 class AX::SystemWide < AX::Element
-  include Accessibility::String
+  include Accessibility::Keyboard
 
   class << self
     ##

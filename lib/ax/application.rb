@@ -1,5 +1,5 @@
 require 'ax/element'
-require 'accessibility/string'
+require 'accessibility/keyboard'
 
 ##
 # The accessibility object representing the running application. This
@@ -9,7 +9,7 @@ require 'accessibility/string'
 # As this class has evolved, it has gathered some functionality from
 # the `NSRunningApplication` and `NSBundle` classes.
 class AX::Application < AX::Element
-  include Accessibility::String
+  include Accessibility::Keyboard
 
   class << self
     ##
