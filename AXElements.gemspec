@@ -15,12 +15,10 @@ style that describes user interactions.
   s.homepage    = 'http://github.com/Marketcircle/AXElements'
   s.licenses    = ['BSD 3-clause']
   s.has_rdoc    = 'yard'
-  s.extensions << 'ext/accessibility/key_coder/extconf.rb'
 
 
   s.files            =
     Dir.glob('lib/**/*.rb*') +
-    Dir.glob('ext/**/*{.rb,.m,.c}') +
     Dir.glob('rakelib/*.rake') +
     ['Rakefile', 'README.markdown', 'History.markdown', '.yardopts']
   s.test_files       =
