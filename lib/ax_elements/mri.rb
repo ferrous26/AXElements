@@ -15,6 +15,8 @@ unless on_macruby?
   KAXWindowRole                = 'AXWindow'
   KAXCloseButtonSubrole        = 'AXCloseButton'
   KAXTrashDockItemSubrole      = 'AXTrashDockItem'
+  KAXPosition                  = 'AXPosition'
+  KAXSize                      = 'AXSize'
   KAXRTFForRangeParameterizedAttribute    = 'AXRTFForRange'
   KAXIsApplicationRunningAttribute        = 'AXIsApplicationRunning'
   KAXStringForRangeParameterizedAttribute = 'AXStringForRange'
@@ -68,4 +70,3 @@ unless defined? KAXIdentifierAttribute
   # @return [String]
   KAXIdentifierAttribute = 'AXIdentifier'
 end
-
