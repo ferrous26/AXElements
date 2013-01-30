@@ -13,7 +13,7 @@ tools such as screen readers.
   EOS
   s.authors     = ['Mark Rada']
   s.email       = 'mrada@marketcircle.com'
-  s.homepage    = 'http://github.com/Marketcircle/AXElements'
+  s.homepage    = 'http://axelements.com'
   s.licenses    = ['BSD 3-clause']
   s.has_rdoc    = 'yard'
 
