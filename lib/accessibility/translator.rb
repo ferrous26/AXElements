@@ -7,6 +7,7 @@ ActiveSupport::Inflector.inflections do |inflect|
   inflect.acronym('UI')
   inflect.acronym('RTF')
   inflect.acronym('URL')
+  inflect.acronym('AMPM')
 end
 
 framework 'ApplicationServices' if on_macruby?
