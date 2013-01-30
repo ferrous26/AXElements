@@ -28,7 +28,7 @@ bug fixes, be accompanied by test(s) where appropriate.
 
 The best way to submit code is through a
 [pull request](https://help.github.com/articles/using-pull-requests) on the
-[Github page](https://github.com/Marketcircle/AXElements), though email is
+[Github page](https://github.com/AXElements/AXElements), though email is
 also acceptable if privacy is a concern. Unless otherwise requested, commit
 history will always be made to reflect who made the contribution.
 
