@@ -4,11 +4,12 @@ Gem::Specification.new do |s|
   s.name     = 'AXElements'
   s.version  = Accessibility::VERSION
 
-  s.summary     = 'A DSL for automating GUI manipulation'
+  s.summary     = 'UI Automation for OS X'
   s.description = <<-EOS
-AXElements is a UI automation DSL built on top of the Mac OS X Accessibility
-Framework that allows code to be written in a very natural and declarative
-style that describes user interactions.
+AXElements is a UI automation library built on top of various OS X
+frameworks. You can use AXElements to write functional tests for
+Cocoa apps, script UI interactions, or even to build higher level
+tools such as screen readers.
   EOS
   s.authors     = ['Mark Rada']
   s.email       = 'mrada@marketcircle.com'
