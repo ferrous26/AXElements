@@ -1,4 +1,5 @@
 require 'ax/element'
+require 'mouse'
 
 ##
 # UI element for a view that can scroll? I'm not sure how else to
