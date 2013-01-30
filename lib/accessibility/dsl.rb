@@ -768,13 +768,13 @@ module Accessibility::DSL
   #   # highlighter automatically turns off after 5 seconds
   #   highlight window.outline.row, colour: NSColor.greenColor, timeout: 5
   #
-  # @param obj [#bounds]
+  # @param obj [#to_rect]
   # @param opts [Hash]
   # @option opts [Number] :timeout
   # @option opts [NSColor] :colour (NSColor.magentaColor)
   # @return [Accessibility::Highlighter]
   def highlight obj, opts = {}
-    Accessibility::Highlighter.new obj.bounds, opts
+    Accessibility::Highlighter.new obj, opts
   end
 
   ##
