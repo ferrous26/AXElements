@@ -1,5 +1,5 @@
 desc 'Start up irb with AXElements loaded'
-task :console => :ext do
+task :console do
   irb = ENV['RUBY_VERSION'] ? 'irb' : 'macirb'
   sh "#{irb} -Ilib -rubygems -rax_elements"
 end
@@ -23,13 +23,13 @@ task :clobber => :clobber_fixture
 
 namespace :test do
   desc 'Run sanity tests (basic, fast stuff)'
-  task :sanity => [:ext, :fixture] do
+  task :sanity => :fixture do
     files = FileList['test/sanity/**/test_*.rb']
     sh "./test/runner #{files}"
   end
 
   desc 'Run integration tests (complex, slow stuff)'
-  task :integration => [:ext, :fixture] do
+  task :integration => :fixture do
     files = FileList['test/integration/**/test_*.rb']
     sh "./test/runner #{files}"
   end
