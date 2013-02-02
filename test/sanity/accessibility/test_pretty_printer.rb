@@ -66,6 +66,8 @@ class TestAccessibilityPrettyPrinter < MiniTest::Unit::TestCase
   end
 
   def test_position
+    @attributes = [:position]
+
     @attribute = CGPoint.new
     assert_match /\(0\.0, 0\.0\)/, pp_position
 
@@ -75,11 +77,14 @@ class TestAccessibilityPrettyPrinter < MiniTest::Unit::TestCase
 
   # this sometimes happens, even though it shouldn't
   def test_position_is_nil
-    @attribute = nil
+    @attributes = [:position]
+    @attribute  = nil
     assert_equal EMPTY_STRING, pp_position
   end
 
   def test_children_pluralizes_properly
+    @attributes = [:children]
+
     [[2,    /2 children/   ],
      [9001, /9001 children/],
      [3.14, /3.14 children/],

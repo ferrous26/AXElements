@@ -58,12 +58,11 @@ module Accessibility::PrettyPrinter
   #
   # @return [String]
   def pp_position
-    position = attribute :position
-    if position
-      " (#{position.x}, #{position.y})"
-    else
-      EMPTY_STRING
+    if attributes.include? :position
+      position = attribute :position
+      return " (#{position.x}, #{position.y})" if position
     end
+    EMPTY_STRING
   end
 
   ##
@@ -72,14 +71,13 @@ module Accessibility::PrettyPrinter
   #
   # @return [String]
   def pp_children
-    child_count = size_of :children
-    if child_count > 1
-      " #{child_count} children"
-    elsif child_count == 1
-      ONE_CHILD
-    else # there are some odd edge cases
-      EMPTY_STRING
+    if attributes.include? :children
+      child_count = size_of :children
+      return " #{child_count} children" if child_count > 1
+      return ONE_CHILD                  if child_count == 1
+      # there are some odd edge cases where 0 children are reported
     end
+    EMPTY_STRING
   end
 
   ##
@@ -91,6 +89,36 @@ module Accessibility::PrettyPrinter
   # @return [String]
   def pp_checkbox attr
     " #{attr}[#{attribute(attr) ? CHECKMARK : CROSS }]"
+  end
+
+  ##
+  # Safely create a {pp_checkbox} for the `KAXEnabledAttribute`
+  #
+  # If the receiver does not have the attribute then an empty
+  # string will be returned.
+  #
+  # @return [String]
+  def pp_enabled
+    if attributes.include? :enabled
+      pp_checkbox(:enabled)
+    else
+      EMPTY_STRING
+    end
+  end
+
+  ##
+  # Safely create a {pp_checkbox} for the `KAXFocusedAttribute`
+  #
+  # If the receiver does not have the attribute then an empty
+  # string will be returned.
+  #
+  # @return [String]
+  def pp_focused
+    if attributes.include? :focused
+      pp_checkbox(:focused)
+    else
+      EMPTY_STRING
+    end
   end
 
 

@@ -365,12 +365,9 @@ class AX::Element
   #
   # @return [String]
   def inspect
-    msg  = "#<#{self.class}" << pp_identifier.to_s
-    msg << pp_position if attributes.include? :position
-    msg << pp_children if attributes.include? :children
-    msg << pp_checkbox(:enabled) if attributes.include? :enabled
-    msg << pp_checkbox(:focused) if attributes.include? :focused
-    msg << '>'
+    "#<#{self.class}" << pp_identifier.to_s <<
+                         pp_position << pp_children <<
+                         pp_enabled << pp_focused << '>'
   end
 
   ##
