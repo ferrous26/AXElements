@@ -1,6 +1,7 @@
 desc 'Start up irb with AXElements loaded'
 task :console do
   irb = ENV['RUBY_VERSION'] ? 'irb' : 'macirb'
+  ENV['AXDEBUG'] = '1'
   sh "#{irb} -Ilib -rubygems -rax_elements"
 end
 
