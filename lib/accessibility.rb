@@ -1,10 +1,12 @@
 require 'accessibility/version'
 require 'ax/application'
 
-class << Accessibility
-
+module Accessibility
   # Initialize the DEBUG value
   @debug = ENV.fetch 'AXDEBUG', $DEBUG
+end
+
+class << Accessibility
 
   ##
   # Whether or not to turn on DEBUG features in AXElements. The
