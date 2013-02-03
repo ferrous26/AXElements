@@ -75,12 +75,16 @@ class AX::Application < AX::Element
   end
 
   ##
+  # @note Initialization with bundle identifiers is case-sensitive
+  #       (e.g. 'com.apple.iCal' is correct, 'com.apple.ical' is wrong)
+  #
   # Standard way of creating a new application object
   #
   # You can initialize an application object with either the process
-  # identifier (pid) of the application, the name of the application,
-  # an `NSRunningApplication` instance for the application, or an
-  # accessibility (`AXUIElementRef`) token.
+  # identifier (pid) of the application, the name of the application, the
+  # bundle identifier string (e.g. 'com.company.appName'), an
+  # `NSRunningApplication` instance for the application, or an accessibility
+  # (`AXUIElementRef`) token.
   #
   # Given a PID, we try to lookup the application and wrap it.
   #
@@ -105,46 +109,27 @@ class AX::Application < AX::Element
   #
   #   AX::Application.new 'com.apple.mail'
   #   AX::Application.new 'Mail'
+  #   AX::Application.new 578
+  #   AX::Application.new 'com.apple.iCal'
+  #   AX::Application.new 'Calendar'
+  #   AX::Application.new 3782
+  #   AX::Application.new 'com.apple.AddressBook'
+  #   AX::Application.new 'Contacts'
   #   AX::Application.new 43567
   #
   # @param arg [Number,String,NSRunningApplication]
   def initialize arg
-    case arg
-    when Fixnum
-      super Accessibility::Element.application_for arg
-      @app = NSRunningApplication.runningApplicationWithProcessIdentifier arg
-    when String
-      until @app
-        @app =
-         (
-          app = NSRunningApplication.runningApplicationsWithBundleIdentifier arg
-          app.first
-
-         ) || (
-           spin
-           NSWorkspace.sharedWorkspace.runningApplications.find { |app|
-             app.localizedName == arg
-           }
-
-         ) || (
-           count ||= 0
-           if AX::Application.launch arg
-             spin 1
-             count += 1
-             raise "#{arg} failed to launch in time" if count == 10
-           else
-             raise "#{arg} is not a registered bundle identifier for the system"
+    @app = case arg
+           when String
+             init_with_bundle_id(arg) || init_with_name(arg) || try_launch(arg)
+           when Fixnum
+             NSRunningApplication.runningApplicationWithProcessIdentifier arg
+           when NSRunningApplication
+             arg
+           else # assume it is an AXUIElementRef (Accessibility::Element)
+             NSRunningApplication.runningApplicationWithProcessIdentifier arg.pid
            end
-        )
-      end
-      super Accessibility::Element.application_for @app.processIdentifier
-    when NSRunningApplication
-      super Accessibility::Element.application_for arg.processIdentifier
-      @app = arg
-    else
-      super arg # assume it is an AXUIElementRef
-      @app = NSRunningApplication.runningApplicationWithProcessIdentifier pid
-    end
+    super Accessibility::Element.application_for @app.processIdentifier
   end
 
 
@@ -435,6 +420,31 @@ class AX::Application < AX::Element
   # @return [NSBundle]
   def bundle
     @bundle ||= NSBundle.bundleWithURL @app.bundleURL
+  end
+
+  def init_with_bundle_id id
+    app = NSRunningApplication.runningApplicationsWithBundleIdentifier id
+    app.first
+  end
+
+  def init_with_name name
+    spin
+    NSWorkspace.sharedWorkspace.runningApplications.find { |app|
+      app.localizedName == name
+    }
+  end
+
+  def try_launch id
+    10.times do
+      app = init_bundle_id id
+      return app if app
+      if AX::Application.launch id
+        spin 1
+      else
+        raise "#{arg} is not a registered bundle identifier for the system"
+      end
+    end
+    raise "#{arg} failed to launch in time"
   end
 
 end
