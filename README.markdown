@@ -124,7 +124,7 @@ as some of the technical the technical underpinnings of AXElements.
 ## Development
 
 [![Dependency Status](https://gemnasium.com/AXElements/AXElements.png)](https://gemnasium.com/AXElements/AXElements)
-[![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/AXElements/AXElements)
+[![Code Climate](https://codeclimate.com/github/AXElements/AXElements.png)](https://codeclimate.com/github/AXElements/AXElements)
 
 AXElements has reached a point where the main focus is stability,
 documentation, and additional conveniences. It will be out of this
