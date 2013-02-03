@@ -14,3 +14,4 @@ Makefile
 pkg/*
 TODO
 unfinished/
+ci/
