@@ -138,6 +138,7 @@ module Accessibility::SystemInfo
   def num_processors
     NSProcessInfo.processInfo.processorCount
   end
+  alias_method :number_of_processors, :num_processors
 
   ##
   # Number of CPUs the system current has enabled
@@ -150,6 +151,7 @@ module Accessibility::SystemInfo
   def num_active_processors
     NSProcessInfo.processInfo.activeProcessorCount
   end
+  alias_method :number_of_active_processors, :num_active_processors
 
   ##
   # Total amount of memory for the system, in bytes
