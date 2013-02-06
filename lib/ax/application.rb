@@ -436,7 +436,7 @@ class AX::Application < AX::Element
 
   def try_launch id
     10.times do
-      app = init_bundle_id id
+      app = init_with_bundle_id id
       return app if app
       if AX::Application.launch id
         spin 1
