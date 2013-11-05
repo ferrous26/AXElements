@@ -1,12 +1,9 @@
-desc 'Compile and display flog metrics for lib/ and test/'
+desc 'Run flog on lib/ and report the results'
 task :flog do
-  require 'flog_task'
-  FlogTask.new :flog_it, 9001 do |t| t.verbose = true end
-  Rake::Task[:flog_it]
+  sh 'flog -g lib/'
 end
 
 desc 'Generate documentation'
 task :yard do
   sh 'yard'
 end
-
