@@ -64,12 +64,31 @@ The code from the demo video is right here:
 
 ## Getting Setup
 
-You will need to have Ruby installed to use AXElements. Since AXElements
-depends on various OS X frameworks, only Rubies with mature support for
-C extensions or bridge support can run AXElements. Supported rubies are:
+If you are running OS X 10.9 (Sea Lion) or newer, all you need are the
+command line tools, and then you can install AXElements:
 
-  - [Ruby 1.9.3+](http://www.ruby-lang.org/)
-  - [MacRuby 0.13+](http://macruby.org/) (v0.13 is a nightly build right now)
+```bash
+  xcode-select --install # if you need to install the command line tools
+
+  sudo gem install AXElements
+```
+
+Alternatively, if you know how to change your `$GEM_HOME`, then you can
+install AXElements without using `sudo`.
+
+You will be asked to "Grant access" for Accessibility to Terminal.app
+when you first try using AXElements. Make sure you select Terminal in
+the list on the right, and then AXElements should work without requiring
+you to grant further permissions:
+
+![Grant Access](http://axelements.com/images/access.png)
+
+![How To Grant Access](http://axelements.com/images/privacy_prefs.png)
+
+For older versions of OS X, you will need to install a compatible version
+of Ruby along with the Developer tools. Supported Rubies are:
+
+  - [Ruby 1.9.4+](http://www.ruby-lang.org/)
 
 You will also need to make sure you "enable access for assistive devices".
 This can be done in System Preferences in the Universal Access section:
@@ -83,28 +102,23 @@ RubyGems install is as usual, but you may need `sudo` power:
     gem install AXElements
 ```
 
-Or you can install from source:
+
+### Install From Source
+
+If the gem install processes are not working for you, you can build
+AXElements from source, but you will need to be familiar with tools
+like `bundler` and `rake`.
 
 ```bash
     cd ~/Documents # or where you want to put the AXElements code
     git clone git://github.com/AXElements/AXElements
-    cd AXElements && rake install
+    cd AXElements && bundle install && rake install
 ```
 
 Once all the setup is finished, you can start up AXElements in IRB:
 
 ```bash
     irb -rubygems -rax_elements
-```
-
-__NOTE__: If you are not using RVM, but are using MacRuby, then you
-should use `macrake` instead of `rake`, and `macirb` instead of `irb`,
-etc.. You may also need to add `sudo` to your command when you install
-the gem. If you are not using RVM with MacRuby, but have RVM
-installed, remember to disable it like so:
-
-```bash
-    rvm use system
 ```
 
 
@@ -155,9 +169,6 @@ you simply need to run the `test` task:
 ```bash
     rake test
 ```
-
-If there is a test that crashes MacRuby then you will need to run tests
-in verbose mode.
 
 __NOTE__: There may be some tests are dependent on Accessibility
 features that are new in OS X Lion which will cause test failures on
