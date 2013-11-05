@@ -382,6 +382,13 @@ class AX::Element
   end
 
   ##
+  #
+  # @return [Hash{Symbol=>Object}]
+  def to_h
+    Hash[attributes.zip attributes.map { |attr| attribute(attr) }]
+  end
+
+  ##
   # Get the relevant details about the receiver and also the children
   # and further descendents of the receiver. Each generation down the
   # tree will be indented one level further.
