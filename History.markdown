@@ -1,3 +1,10 @@
+# 6.0.0
+
+  * Compatability with Sea Lion (OS X 10.9)
+    - You can no longer send simulated input directly to an object,
+      we now approximate the old behaviour by trying to set focus
+      to the element before simulating system wide input
+
 # 0.9.0
 
   * AXElements can now run on MRI as well as MacRuby
