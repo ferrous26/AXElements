@@ -165,6 +165,9 @@ module Accessibility::DSL
   end
 
   ##
+  # @todo Introduce a method to set focus to closest ancestor that
+  #       supports focus.
+  #
   # Focus an element on the screen, but only if it can be directly
   # focused. It is safe to pass any element into this method as nothing
   # will happen if it does not have a writable focused state attribute.

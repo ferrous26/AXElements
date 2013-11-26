@@ -303,8 +303,10 @@ class AX::Application < AX::Element
   # @param string [String]
   # @return [Boolean]
   def type string
-    @ref.post keyboard_events_for string
-    true
+    perform(:unhide) unless focused?
+    keyboard_events_for(string).each do |event|
+      KeyCoder.post_event event
+    end
   end
   alias_method :type_string, :type
 

@@ -227,6 +227,22 @@ class AX::Element
     @ref.perform TRANSLATOR.cocoaify action
   end
 
+  ##
+  # @note As of OS X 10.9 (Sea Lion), it is no longer possible to send
+  #       keyboard events directly to an element. What we have here is
+  #       only an approximation.
+  #
+  # Send keyboard events to the receiver.
+  #
+  # @param string [String]
+  # @return [Boolean]
+  def type string
+    set_focus_to self unless focused?
+    keyboard_events_for(string).each do |event|
+      KeyCoder.post_event event
+    end
+  end
+
 
   # @group Search
 
