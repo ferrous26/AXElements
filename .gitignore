@@ -15,3 +15,5 @@ pkg/*
 TODO
 unfinished/
 ci/
+.ruby-gemset
+.ruby-version
