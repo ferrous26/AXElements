@@ -2,7 +2,7 @@
 --no-output
 --verbose
 --markup markdown
---markup-provider redcarpet
+--markup-provider kramdown
 --asset docs/images:images
 --readme README.markdown
 --hide-void-return
