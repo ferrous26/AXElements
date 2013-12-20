@@ -19,7 +19,7 @@ tools such as screen readers.
 
 
   s.files            =
-    Dir.glob('lib/**/*.rb*') +
+    Dir.glob('lib/**/*.rb') +
     Dir.glob('rakelib/*.rake') +
     ['Rakefile', 'README.markdown', 'History.markdown', '.yardopts']
   s.test_files       =
