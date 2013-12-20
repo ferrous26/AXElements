@@ -1,5 +1,5 @@
 require 'rubygems'
-require 'simplecov' unless RUBY_ENGINE == 'macruby'
+require 'simplecov'
 
 require 'test/fixture_app' # must be loaded before minitest
 require 'minitest/autorun'
