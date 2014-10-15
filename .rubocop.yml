@@ -1,0 +1,8 @@
+Style/MethodDefParentheses:
+  Enabled: false
+
+Style/EmptyLinesAroundBody:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
