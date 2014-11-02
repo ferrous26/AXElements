@@ -17,15 +17,19 @@ tools such as screen readers.
   s.licenses    = ['BSD 3-clause']
   s.has_rdoc    = 'yard'
 
-
   s.files            =
     Dir.glob('lib/**/*.rb') +
     Dir.glob('rakelib/*.rake') +
-    ['Rakefile', 'README.markdown', 'History.markdown', '.yardopts']
+    [
+      'Rakefile',
+      'README.markdown',
+      'History.markdown',
+      '.yardopts',
+      'CONTRIBUTING.markdown'
+    ]
   s.test_files       =
     Dir.glob('test/**/test_*.rb') +
-    [ 'test/helper.rb' ]
-
+    ['test/helper.rb']
 
   s.add_runtime_dependency 'mouse',                  '~> 2.0.0'
   s.add_runtime_dependency 'screen_recorder',        '~> 0.1.5'
