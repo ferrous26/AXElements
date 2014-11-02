@@ -12,7 +12,7 @@ group :ci do
   gem 'ci_reporter'
 end
 
-gem :offline do
+group :offline do
   gem 'rubocop'
   gem 'yard'
   gem 'yardstick'
