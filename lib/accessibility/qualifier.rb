@@ -105,7 +105,7 @@ class Accessibility::Qualifier
   # @param element [AX::Element]
   def meets_criteria? element
     @filters.all? do |filter|
-      self.send *filter, element
+      self.send(*filter, element)
     end
   end
 
@@ -114,27 +114,23 @@ class Accessibility::Qualifier
   end
 
   def match attr, regexp, element
-    if element.attributes.include? attr
-      element.attribute(attr).to_s.match regexp
-    end
+    return unless element.attributes.include? attr
+    element.attribute(attr).to_s.match regexp
   end
 
   def equality attr, value, element
-    if element.attributes.include? attr
-      element.attribute(attr) == value
-    end
+    return unless element.attributes.include? attr
+    element.attribute(attr) == value
   end
 
   def parameterized_match attr, param, regexp, element
-    if element.parameterized_attributes.include? attr
-      element.parameterized_attribute(attr, param).to_s.match regexp
-    end
+    return unless element.parameterized_attributes.include? attr
+    element.parameterized_attribute(attr, param).to_s.match regexp
   end
 
   def parameterized_equality attr, param, value, element
-    if element.parameterized_attributes.include? attr
-      element.parameterized_attribute(attr, param) == value
-    end
+    return unless element.parameterized_attributes.include? attr
+    element.parameterized_attribute(attr, param) == value
   end
 
   def block_check element
