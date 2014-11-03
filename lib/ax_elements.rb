@@ -1,4 +1,4 @@
-require 'ax_elements/active_support_selections'
+require 'active_support/core_ext'
 require 'accessibility/bridge'
 require 'ax_elements/mri' unless on_macruby?
 
