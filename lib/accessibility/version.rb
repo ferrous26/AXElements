@@ -4,7 +4,7 @@
 # The main AXElements namespace.
 module Accessibility
   # @return [String]
-  VERSION   = '6.0.0'
+  VERSION   = '7.0.0.pre'
 
   # @return [String]
   CODE_NAME = case RUBY_ENGINE
