@@ -351,7 +351,7 @@ class AX::Element
   #   window.application # => SearchFailure is raised
   #
   def method_missing method, *args, &block
-    return set(method.chomp(EQUALS), args.first) if method[-1] == EQUALS
+    return set(method.to_s.chomp(EQUALS), args.first) if method[-1] == EQUALS
 
     key = TRANSLATOR.cocoaify method
     if @ref.attributes.include? key
@@ -429,7 +429,7 @@ class AX::Element
   #
   # This does not work for predicate methods at the moment.
   def respond_to? name
-    key = TRANSLATOR.cocoaify name.chomp(EQUALS)
+    key = TRANSLATOR.cocoaify name.to_s.chomp(EQUALS)
     @ref.attributes.include?(key)               ||
     @ref.parameterized_attributes.include?(key) ||
     super

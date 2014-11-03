@@ -145,8 +145,8 @@ end
 
 
 ##
-# AXElements extensions to `NSDictionary`.
-class NSDictionary
+# AXElements extensions to {Hash}.
+class Hash
   ##
   # Format the hash for AXElements pretty printing.
   #

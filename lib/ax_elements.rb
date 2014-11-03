@@ -1,6 +1,6 @@
 require 'active_support/core_ext'
 require 'accessibility/bridge'
-require 'ax_elements/mri' unless on_macruby?
+require 'ax_elements/mri'
 
 # Mix the language methods into the TopLevel
 require 'accessibility/dsl'
@@ -25,4 +25,3 @@ require 'ax/pop_up_button'
 
 # Misc things that we need to load
 require 'ax_elements/nsarray_compat'
-# require 'ax_elements/exception_workaround' # disable for now

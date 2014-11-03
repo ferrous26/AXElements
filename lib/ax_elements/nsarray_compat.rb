@@ -10,7 +10,7 @@ require 'active_support/core_ext/array/access'
 # I've always been on the fence as to whether this was a good idea or
 # not, but at this point there is too much code written that depends
 # on this and so I will just keep it around for backwards compatability.
-module Accessibility::NSArrayCompat
+module Accessibility::ArrayCompatibility
 
   ##
   # @note Debatably bad idea. Maintained for backwards compatibility.
@@ -47,99 +47,8 @@ module Accessibility::NSArrayCompat
 
 end
 
-unless defined? NSArray
-  NSArray = Array
-end
-
 ##
-# AXElements extensions for `NSArray`
-class NSArray
-  include Accessibility::NSArrayCompat
-
-  if on_macruby?
-
-    ##
-    # Returns the tail of the array from `position`
-    #
-    # @example
-    #
-    #   [1, 2, 3, 4].from(0)   # => [1, 2, 3, 4]
-    #   [1, 2, 3, 4].from(2)   # => [3, 4]
-    #   [1, 2, 3, 4].from(10)  # => []
-    #   [].from(0)             # => []
-    #
-    # @param position [Fixnum]
-    # @return [Array]
-    def from position
-      self[position, length] || []
-    end
-
-    ##
-    # Returns the beginning of the array up to `position`
-    #
-    #   [1, 2, 3, 4].to(0)   # => [1]
-    #   [1, 2, 3, 4].to(2)   # => [1, 2, 3]
-    #   [1, 2, 3, 4].to(10)  # => [1, 2, 3, 4]
-    #   [].to(0)             # => []
-    #
-    # @param count [Fixnum]
-    # @return [Array]
-    def to count
-      take count + 1
-    end
-
-    ##
-    # Equal to `self[1]`
-    def second
-      self[1]
-    end
-
-    ##
-    # Equal to `self[2]`
-    def third
-      self[2]
-    end
-
-    ##
-    # Equal to `self[3]`
-    def fourth
-      self[3]
-    end
-
-    ##
-    # Equal to `self[4]`
-    def fifth
-      self[4]
-    end
-
-    ##
-    # Equal to `self[41]`
-    #
-    # Also known as accessing "the reddit".
-    def forty_two
-      self[41]
-    end
-
-  else
-
-    ##
-    # Create a new array with the same contents as the given array
-    #
-    # @param ary [Array]
-    def self.arrayWithArray ary
-      ary.dup
-    end
-
-    ##
-    # Create and return a new empty array
-    #
-    # @return [Array]
-    def self.array
-      []
-    end
-
-  end
-
-  alias_method :the_reddit, :forty_two
-
+# AXElements extensions for `Array`
+class Array
+  include Accessibility::ArrayCompatibility
 end

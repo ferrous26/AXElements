@@ -61,7 +61,7 @@ class TestAccessibilityPrettyPrinter < MiniTest::Unit::TestCase
   end
 
   def test_identifier_empty_string_as_final_fallback
-    @attributes = NSArray.array
+    @attributes = []
     assert_equal EMPTY_STRING, pp_identifier.to_s
   end
 

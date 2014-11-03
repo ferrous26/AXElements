@@ -22,7 +22,7 @@ module Accessibility::PrettyPrinter
 
     if attributes.include? :value
       val = attribute :value
-      if val.kind_of? NSString
+      if val.kind_of? String
         return " #{val.inspect}" unless val.empty?
       else
         # we assume that nil is not a legitimate value
