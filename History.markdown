@@ -1,3 +1,10 @@
+# 7.0.0
+
+  * Compatibility with Yosemity (OS X 10.10)
+  * Remove MacRuby support
+  * Update ActiveSupport dependency and
+    - ActiveSupport 4.1.x is now required and all core extensions are loaded
+
 # 6.0.0
 
   * Compatability with Sea Lion (OS X 10.9)
