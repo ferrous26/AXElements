@@ -11,7 +11,7 @@ APP_BUNDLE_IDENTIFIER = 'com.marketcircle.AXElementsTester'
 sleep 3
 
 at_exit do
-  `killall AXElementsTester`
+  system 'killall AXElementsTester'
 end
 
 def pid_for name
@@ -24,4 +24,3 @@ end
 require 'accessibility/core'
 APP_PID = pid_for APP_BUNDLE_IDENTIFIER
 REF = Accessibility::Element.application_for APP_PID
-
