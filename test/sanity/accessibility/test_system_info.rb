@@ -1,7 +1,7 @@
 require 'test/helper'
 require 'accessibility/system_info'
 
-class TestAcessibilitySystemInfo < MiniTest::Unit::TestCase
+class TestAcessibilitySystemInfo < Minitest::Test
 
   def test_name
     name = Accessibility::SystemInfo.name
@@ -58,7 +58,7 @@ class TestAcessibilitySystemInfo < MiniTest::Unit::TestCase
     version = Accessibility::SystemInfo.osx_version
     assert_kind_of String, version
     refute_empty version
-    assert_match /^Version 10\.\d+\.\d+ \(Build [\dA-Z]+\)$/, version
+    assert_match /^Version 10\.\d+(\.\d*)? \(Build [\dA-Za-z]+\)$/, version
   end
 
   def test_uptime

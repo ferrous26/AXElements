@@ -1,6 +1,6 @@
 require 'test/integration/helper'
 
-class TestAXApplication < MiniTest::Unit::TestCase
+class TestAXApplication < Minitest::Test
 
   def running_app
     app.instance_variable_get :@app

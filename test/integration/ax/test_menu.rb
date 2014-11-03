@@ -1,6 +1,6 @@
 require 'test/integration/helper'
 
-class TestAXMenu < MiniTest::Unit::TestCase
+class TestAXMenu < Minitest::Test
 
   def test_item
     pop_up = app.main_window.pop_up

@@ -2,7 +2,7 @@ require 'test/helper'
 require 'accessibility/factory'
 require 'ax/application'
 
-class TestAccessibilityElementFactory < MiniTest::Unit::TestCase
+class TestAccessibilityElementFactory < Minitest::Test
 
   def window
     @@window ||= REF.to_ruby.children.find { |x| x.role == KAXWindowRole }

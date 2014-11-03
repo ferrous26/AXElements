@@ -1,6 +1,6 @@
 require 'test/integration/helper'
 
-class TestAccessibilityEnumeratorsBreadthFirst < MiniTest::Unit::TestCase
+class TestAccessibilityEnumeratorsBreadthFirst < Minitest::Test
 
   def test_each_iterates_in_correct_order
     tab_group = app.main_window.children.find { |x| x.class == AX::TabGroup }
@@ -47,8 +47,7 @@ class TestAccessibilityEnumeratorsBreadthFirst < MiniTest::Unit::TestCase
 
 end
 
-
-class TestAccessibilityEnumeratorsDepthFirst < MiniTest::Unit::TestCase
+class TestAccessibilityEnumeratorsDepthFirst < Minitest::Test
 
   def app
     @@app ||= AX::Application.new REF

@@ -1,6 +1,6 @@
 require 'test/integration/helper'
 
-class TestAXRow < MiniTest::Unit::TestCase
+class TestAXRow < Minitest::Test
 
   def table; @@table ||= app.main_window.table end
   def rows;  @@rows  ||= table.rows end

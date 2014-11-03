@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 require 'test/integration/helper'
 
-class TestAccessibilityErrors < MiniTest::Unit::TestCase
+class TestAccessibilityErrors < Minitest::Test
 
   def test_search_failure_shows_arguments
     e = Accessibility::SearchFailure.new(app, :list, {herp: :derp}) { }

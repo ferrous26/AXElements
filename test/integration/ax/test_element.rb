@@ -1,6 +1,6 @@
 require 'test/integration/helper'
 
-class TestAXElement < MiniTest::Unit::TestCase
+class TestAXElement < Minitest::Test
 
   def test_path_returns_correct_elements_in_correct_order
     list = app.window.close_button.ancestry

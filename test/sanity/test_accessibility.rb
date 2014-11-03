@@ -1,7 +1,7 @@
 require 'test/helper'
 require 'accessibility'
 
-class TestAccessibilityDebug < MiniTest::Unit::TestCase
+class TestAccessibilityDebug < Minitest::Test
   def test_debug_setting
     assert_respond_to Accessibility, :debug?
     assert_respond_to Accessibility, :debug=

@@ -1,8 +1,7 @@
 require 'test/helper'
 require 'accessibility/translator'
 
-
-class TestAccessibilityTranslator < MiniTest::Unit::TestCase
+class TestAccessibilityTranslator < Minitest::Test
 
   TRANSLATOR = Accessibility::Translator.instance
 

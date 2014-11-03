@@ -1,6 +1,6 @@
 require 'test/integration/helper'
 
-class TestNSArrayCompat < MiniTest::Unit::TestCase
+class TestNSArrayCompat < Minitest::Test
 
   def test_raises_for_non_elements
     assert_raises NoMethodError do
@@ -8,7 +8,7 @@ class TestNSArrayCompat < MiniTest::Unit::TestCase
     end
 
     assert_raises NoMethodError do
-      [app,1].titles
+      [app, 1].titles
     end
   end
 

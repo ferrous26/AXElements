@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 require 'test/integration/helper'
 
-class TestAccessibilityQualifier < MiniTest::Unit::TestCase
+class TestAccessibilityQualifier < Minitest::Test
 
   def qualifier klass, criteria, &block
     Accessibility::Qualifier.new(klass, criteria, &block)

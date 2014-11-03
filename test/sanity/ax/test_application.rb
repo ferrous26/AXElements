@@ -3,7 +3,7 @@ require 'test/helper'
 require 'ax/application'
 
 
-class TestAXApplication < MiniTest::Unit::TestCase
+class TestAXApplication < Minitest::Test
 
   def app
     @app ||= AX::Application.new REF

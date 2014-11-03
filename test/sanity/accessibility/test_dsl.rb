@@ -2,8 +2,7 @@ require 'test/fixture_app'
 require 'test/helper'
 require 'accessibility/dsl'
 
-
-class TestAccessibilityDSL < MiniTest::Unit::TestCase
+class TestAccessibilityDSL < Minitest::Test
 
   # LSP FTW
   class DSL

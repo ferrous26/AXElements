@@ -6,7 +6,7 @@ require 'ax_elements'
 Accessibility.debug = true
 
 
-class MiniTest::Unit::TestCase
+class Minitest::Test
 
   def app
     @@app ||= AX::Application.new APP_PID

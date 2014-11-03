@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 require 'test/integration/helper'
 
-class TestAccessibilityDSL < MiniTest::Unit::TestCase
+class TestAccessibilityDSL < Minitest::Test
 
   # LSP FTW
   class DSL

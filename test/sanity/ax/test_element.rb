@@ -1,7 +1,7 @@
 require 'test/helper'
 require 'ax/element'
 
-class TestAXElement < MiniTest::Unit::TestCase
+class TestAXElement < Minitest::Test
 
   def element
     @element ||= AX::Element.new REF
@@ -67,7 +67,7 @@ class TestAXElement < MiniTest::Unit::TestCase
 end
 
 
-class TestSearchResultBlankness < MiniTest::Unit::TestCase
+class TestSearchResultBlankness < Minitest::Test
 
   def test_array_blank
     [

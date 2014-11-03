@@ -10,4 +10,3 @@ ARGV.each do |file|
     require file
   end
 end
-

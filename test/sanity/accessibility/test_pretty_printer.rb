@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
+require 'test/helper'
+require 'accessibility/pretty_printer'
 
-class TestAccessibilityPrettyPrinter < MiniTest::Unit::TestCase
+class TestAccessibilityPrettyPrinter < Minitest::Test
   include Accessibility::PrettyPrinter
 
   # expected API for PrettyPrinter module

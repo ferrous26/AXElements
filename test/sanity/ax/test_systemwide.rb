@@ -5,7 +5,7 @@ class AX::Element
   attr_reader :ref
 end
 
-class TestAXSystemWide < MiniTest::Unit::TestCase
+class TestAXSystemWide < Minitest::Test
 
   def system_wide
     @system_wide ||= AX::SystemWide.new
@@ -14,14 +14,6 @@ class TestAXSystemWide < MiniTest::Unit::TestCase
   # this is more so I know if Apple ever changes how CFEqual() works on AX stuff
   def test_is_effectively_a_singleton
     assert_equal AX::SystemWide.new, AX::SystemWide.new
-  end
-
-  def test_type_forwards_events
-    ref         = system_wide.ref
-    called_back = false
-    ref.define_singleton_method(:post) { |x| called_back = true if x.kind_of? Array }
-    assert system_wide.type 'test'
-    assert called_back
   end
 
   def test_search_not_allowed

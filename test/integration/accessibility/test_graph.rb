@@ -1,7 +1,7 @@
 require 'test/integration/helper'
 require 'accessibility/graph'
 
-class TestAccessibilityGraph < MiniTest::Unit::TestCase
+class TestAccessibilityGraph < Minitest::Test
 
   def test_generate
     skip 'graphs are broken right now'

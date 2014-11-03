@@ -1,7 +1,7 @@
 require 'test/helper'
 require 'ax_elements'
 
-class TestDefaults < MiniTest::Unit::TestCase
+class TestDefaults < Minitest::Test
 
   def test_dock_constant_is_set
     assert_instance_of AX::Application, AX::DOCK
