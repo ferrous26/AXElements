@@ -443,10 +443,10 @@ class AX::Application < AX::Element
       if AX::Application.launch id
         spin 1
       else
-        raise "#{arg} is not a registered bundle identifier for the system"
+        raise "#{id} is not a registered bundle identifier for the system"
       end
     end
-    raise "#{arg} failed to launch in time"
+    raise "#{id} failed to launch in time"
   end
 
 end
