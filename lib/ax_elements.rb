@@ -1,4 +1,4 @@
-require 'active_support/deprecation' # remove after activesupport 4.2.1
+require 'active_support'
 require 'active_support/core_ext'
 require 'accessibility/bridge'
 require 'ax_elements/mri'
