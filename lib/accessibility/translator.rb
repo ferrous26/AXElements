@@ -123,7 +123,7 @@ class Accessibility::Translator
   # @param name [#to_s]
   # @return [String]
   def guess_notification name
-    name  = name.to_s.gsub /(?:^|_)(.)/ do $1.upcase! || $1 end
+    name  = name.to_s.gsub(/(?:^|_)(.)/) do $1.upcase! || $1 end
     const = "KAX#{name}Notification"
     Object.const_defined?(const) ? Object.const_get(const) : name
   end
