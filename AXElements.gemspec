@@ -35,5 +35,5 @@ tools such as screen readers.
   s.add_runtime_dependency 'screen_recorder',        '~> 0.1.5'
   s.add_runtime_dependency 'accessibility_core',     '~> 0.5.0'
   s.add_runtime_dependency 'accessibility_keyboard', '~> 1.0.0'
-  s.add_runtime_dependency 'activesupport',          '~> 4.1.6'
+  s.add_runtime_dependency 'activesupport',          '~> 4.2.0'
 end
