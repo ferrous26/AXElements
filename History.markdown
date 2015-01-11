@@ -2,6 +2,7 @@
 
   * Compatibility with Yosemite (OS X 10.10)
   * Remove MacRuby support
+  * Allow other Array#method\_missing handlers to function (GH-9)
   * Update ActiveSupport dependency and
     - ActiveSupport 4.2.x is now required and all core extensions are loaded
 
