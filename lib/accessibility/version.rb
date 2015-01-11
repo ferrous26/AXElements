@@ -4,11 +4,10 @@
 # The main AXElements namespace.
 module Accessibility
   # @return [String]
-  VERSION   = '7.0.0.pre'
+  VERSION   = '7.0.0.pre2'
 
   # @return [String]
   CODE_NAME = case RUBY_ENGINE
-              when 'macruby' then 'サンダース'
               when 'ruby'    then 'ブースター'
               when 'rbx'     then 'ブラッキー' # for when rbx has good cext support
               else 'シャワーズ' # vapor(ware)eon
