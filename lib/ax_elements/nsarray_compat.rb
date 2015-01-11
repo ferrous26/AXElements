@@ -29,11 +29,13 @@ module Accessibility::ArrayCompatibility
   #   outline.rows.text_fields.values # all at once
   #
   def method_missing method, *args
+    super unless first.kind_of?(AX::Element) ||
+      (empty? && method != :to_hash) # hack for GH-9
+
     smethod = TRANSLATOR.singularize(method.to_s.chomp('?'))
     map do |x|
-      if    !x.kind_of?(AX::Element) then super
-      elsif  x.respond_to? method    then x.send method,  *args
-      else                                x.send smethod, *args
+      if  x.respond_to? method    then x.send method,  *args
+      else                             x.send smethod, *args
       end
     end
   end
