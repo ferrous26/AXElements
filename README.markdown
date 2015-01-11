@@ -172,11 +172,8 @@ you simply need to run the `test` task:
 
 __NOTE__: There may be some tests are dependent on Accessibility
 features that are new in OS X Lion which will cause test failures on
-OS X Snow Leopard. If you have any issues then you should look at the
-output to find hints at what went wrong and/or log a bug. AXElements
-will support Snow Leopard for as long as MacRuby does, but I do not
-have easy access to a Snow Leopard machine to verify that things still
-work.
+OS X Snow Leopard. AXElements requires OS X versions with system Ruby
+at version 2.0.0 or newer.
 
 ### Benchmarks
 
