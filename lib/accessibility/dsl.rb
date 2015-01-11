@@ -806,7 +806,7 @@ module Accessibility::DSL
   ##
   # Take a screen shot and save it to disk. If a file name and path are
   # not given then default values will be used; given paths will be
-  # expanded automatically.A timestamp and file extension will always
+  # expanded automatically. A timestamp and file extension will always
   # automatically be appended to the file name.
   #
   # @example
