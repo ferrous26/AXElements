@@ -10,9 +10,6 @@ ActiveSupport::Inflector.inflections do |inflect|
   inflect.acronym('AMPM')
 end
 
-framework 'ApplicationServices' if on_macruby?
-
-
 ##
 # Maintain all the rules for transforming Cocoa constants into something
 # a little more Rubyish and taking the Rubyish symbols and translating
