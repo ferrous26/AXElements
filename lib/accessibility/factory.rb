@@ -136,4 +136,3 @@ class Accessibility::Element
   # @return [Accessibility::Translator]
   TRANSLATOR = Accessibility::Translator.instance
 end
-

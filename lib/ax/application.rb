@@ -325,10 +325,10 @@ class AX::Application < AX::Element
   def hold_modifier key
     code = EventGenerator::CUSTOM[key]
     raise ArgumentError, "Invalid modifier `#{key}' given" unless code
-    @ref.post [[code, true]]
+    @ref.post([[code, true]])
     yield
   ensure
-    @ref.post [[code,false]] if code
+    @ref.post([[code, false]]) if code
     code
   end
 
@@ -344,7 +344,7 @@ class AX::Application < AX::Element
   # @param path [String,Regexp]
   # @return [AX::MenuItem]
   def select_menu_item *path
-    target = navigate_menu *path
+    target = navigate_menu(*path)
     target.perform :press
     target
   end

@@ -154,7 +154,7 @@ class Accessibility::Translator
     @rubyisms = Hash.new do |hash, key|
       hash[key] = [ActiveSupport::Inflector.underscore(@unprefixes[key]).to_sym]
     end
-    preloads.each_pair do |k,v| @rubyisms[v] << k end
+    preloads.each_pair do |k, v| @rubyisms[v] << k end
   end
 
   # @return [Hash{Symbol=>String}]
