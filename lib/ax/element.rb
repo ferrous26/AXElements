@@ -428,7 +428,7 @@ class AX::Element
   # lookups, but will return false for potential implicit searches.
   #
   # This does not work for predicate methods at the moment.
-  def respond_to? name
+  def respond_to? name, priv = false
     key = TRANSLATOR.cocoaify name.to_s.chomp(EQUALS)
     @ref.attributes.include?(key)               ||
     @ref.parameterized_attributes.include?(key) ||
