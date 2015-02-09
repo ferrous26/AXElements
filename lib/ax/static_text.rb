@@ -12,7 +12,7 @@ class AX::StaticText < AX::Element
   #
   # @return [Boolean]
   def == other
-    if other.kind_of? NSString
+    if other.kind_of? String
       attribute(:value) == other
     else
       super

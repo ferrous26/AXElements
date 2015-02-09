@@ -13,7 +13,7 @@ class AX::RadioButton < AX::Element
   #
   # @return [Boolean]
   def == other
-    if other.kind_of? NSString
+    if other.kind_of? String
       attribute(:title) == other
     else
       super

@@ -24,7 +24,7 @@ class TestAXElement < Minitest::Test
 
   def test_search_plural
     result = app.window.search(:buttons)
-    assert_kind_of NSArray, result
+    assert_kind_of Array, result
   end
 
   def test_set_range
