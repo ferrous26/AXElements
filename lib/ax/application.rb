@@ -294,8 +294,8 @@ class AX::Application < AX::Element
   end
 
   ##
-  # Send keyboard input to the receiver, the control in the app that
-  # currently has focus will receive the key presses.
+  # Send keyboard input to the focused control element; this is not necessarily
+  # an element belonging to the receiving app.
   #
   # For details on how to format the string, check out the
   # [Keyboarding documentation](http://github.com/Marketcircle/AXElements/wiki/Keyboarding).
@@ -312,11 +312,12 @@ class AX::Application < AX::Element
 
   ##
   # Press the given modifier key and hold it down while yielding to
-  # the given block.
+  # the given block. As with {#type}, the key events apply to the control
+  # element which is currently focused.
   #
   # @example
   #
-  #   hold_key "\\CONTROL" do
+  #   hold_modifier "\\CONTROL" do
   #     drag_mouse_to point
   #   end
   #
@@ -325,10 +326,10 @@ class AX::Application < AX::Element
   def hold_modifier key
     code = EventGenerator::CUSTOM[key]
     raise ArgumentError, "Invalid modifier `#{key}' given" unless code
-    KeyCoder.post([[code, true]])
+    KeyCoder.post_event([[code, true]])
     yield
   ensure
-    KeyCoder.post([[code, false]]) if code
+    KeyCoder.post_event([[code, false]]) if code
     code
   end
 

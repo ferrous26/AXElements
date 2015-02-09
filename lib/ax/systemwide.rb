@@ -45,14 +45,10 @@ class AX::SystemWide < AX::Element
   end
 
   ##
-  # @note With the `SystemWide` class, using {#type} will send the
-  #       events to which ever app has focus.
+  # Send keyboard input to the focused control element.
   #
-  # Generate keyboard events by simulating keyboard input.
-  #
-  # See the
-  # [Keyboarding documentation](http://github.com/Marketcircle/AXElements/wiki/Keyboarding)
-  # for more information on how to format strings.
+  # For details on how to format the string, check out the
+  # [Keyboarding documentation](http://github.com/Marketcircle/AXElements/wiki/Keyboarding).
   #
   # @param string [String]
   # @return [Boolean]
@@ -69,7 +65,7 @@ class AX::SystemWide < AX::Element
   #
   # @example
   #
-  #   hold_key "\\CONTROL" do
+  #   hold_modifier "\\CONTROL" do
   #     drag_mouse_to point
   #   end
   #
@@ -78,10 +74,10 @@ class AX::SystemWide < AX::Element
   def hold_modifier key
     code = EventGenerator::CUSTOM[key]
     raise ArgumentError, "Invalid modifier `#{key}' given" unless code
-    KeyCoder.post([[code, true]])
+    KeyCoder.post_event([[code, true]])
     yield
   ensure # if block raises the button might stuck, so ensure it is released
-    KeyCoder.post([[code, false]]) if code
+    KeyCoder.post_event([[code, false]]) if code
     code
   end
 
