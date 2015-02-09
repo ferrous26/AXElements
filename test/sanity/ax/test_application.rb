@@ -100,7 +100,7 @@ class TestAXApplication < Minitest::Test
   end
 
   def test_info_plist
-    assert_equal 'transmute', app.info_plist['CFBundleIconFile']
+    assert_equal 'hmmmmm', app.info_plist['CFBundleIconFile']
   end
 
   def test_version
