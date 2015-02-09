@@ -15,6 +15,4 @@ end
 group :offline do
   gem 'rubocop'
   gem 'yard'
-  gem 'yardstick'
-  gem 'rubycritic'
 end
