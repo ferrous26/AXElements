@@ -31,7 +31,7 @@ tools such as screen readers.
     Dir.glob('test/**/test_*.rb') +
     ['test/helper.rb']
 
-  s.add_runtime_dependency 'mouse',                  '~> 2.0.0'
+  s.add_runtime_dependency 'mouse',                  '~> 4.0'
   s.add_runtime_dependency 'screen_recorder',        '~> 0.1.5'
   s.add_runtime_dependency 'accessibility_core',     '~> 0.5.0'
   s.add_runtime_dependency 'accessibility_keyboard', '~> 1.0.0'
