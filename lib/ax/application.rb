@@ -325,10 +325,10 @@ class AX::Application < AX::Element
   def hold_modifier key
     code = EventGenerator::CUSTOM[key]
     raise ArgumentError, "Invalid modifier `#{key}' given" unless code
-    @ref.post([[code, true]])
+    KeyCoder.post([[code, true]])
     yield
   ensure
-    @ref.post([[code, false]]) if code
+    KeyCoder.post([[code, false]]) if code
     code
   end
 
