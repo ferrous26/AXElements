@@ -73,8 +73,8 @@ command line tools, and then you can install AXElements:
   sudo gem install AXElements
 ```
 
-Alternatively, if you know how to change your `$GEM_HOME`, then you can
-install AXElements without using `sudo`.
+Alternatively, if you know how to change your `$GEM_HOME`, or are
+using RVM, then you can install AXElements without using `sudo`.
 
 You will be asked to "Grant access" for Accessibility to Terminal.app
 when you first try using AXElements. Make sure you select Terminal in
@@ -86,21 +86,29 @@ you to grant further permissions:
 ![How To Grant Access](http://axelements.com/images/privacy_prefs.png)
 
 For older versions of OS X, you will need to install a compatible version
-of Ruby along with the Developer tools. Supported Rubies are:
-
-  - [Ruby 1.9.4+](http://www.ruby-lang.org/)
+of Ruby (2.0.0+) along with the Developer tools.
 
 You will also need to make sure you "enable access for assistive devices".
 This can be done in System Preferences in the Universal Access section:
 
 ![Universal Access](http://ferrous26.com/images/enable_accessibility.png)
 
-Then you can install AXElements either from RubyGems or from source. The
-RubyGems install is as usual, but you may need `sudo` power:
+Then you can install AXElements the same as OS X 10.9.
 
-```bash
-    gem install AXElements
+
+### Security
+
+AXElements is cryptographically signed. To be sure the gem you install
+hasn’t been tampered with you will want to add my public key (if you
+haven’t already) as a trusted certificate for Rubygems:
+
+```sh
+gem cert --add <(curl -Ls https://raw.github.com/AXElements/AXElements/master/certs/markrada26@gmail.com.pem)
+gem install AXElements -P MediumSecurity
 ```
+
+Unfortunately, not all of AXElements' dependencies are signed, and so
+`Medium` security is the strongest that can be used at the moment.
 
 
 ### Install From Source
@@ -193,7 +201,7 @@ See {file:CONTRIBUTING.markdown}
 
 ## Copyright
 
-Copyright (c) 2010-2013, Marketcircle Inc.
+Copyright (c) 2010-2015, Marketcircle Inc.
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
@@ -222,4 +230,3 @@ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/AXElements/axelements/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
