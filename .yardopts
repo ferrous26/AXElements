@@ -1,8 +1,5 @@
---no-cache
---no-output
 --verbose
 --markup markdown
---markup-provider kramdown
 --asset docs/images:images
 --readme README.markdown
 --hide-void-return
@@ -11,4 +8,3 @@ ext/**/*{.m,.c}
 -
 History.markdown
 CONTRIBUTING.markdown
-
