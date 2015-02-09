@@ -14,7 +14,7 @@ require 'accessibility/pretty_printer'
 # @abstract
 #
 # The abstract base class for all accessibility objects. `AX::Element`
-# composes low level {AXUIElementRef} objects into a more Rubyish
+# composes low level `AXUIElementRef` objects into a more Rubyish
 # interface.
 #
 # This abstract base class provides generic functionality that all

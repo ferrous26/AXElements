@@ -272,7 +272,7 @@ class AX::Application < AX::Element
     perform :unhide
   end
 
-  # (see AX::Element#perform)
+  # @see AX::Element#perform
   def perform name
     case name
     when :terminate

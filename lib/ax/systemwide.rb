@@ -37,7 +37,6 @@ class AX::SystemWide < AX::Element
     end
   end
 
-
   ##
   # Overridden since there is only one way to get the element ref.
   def initialize

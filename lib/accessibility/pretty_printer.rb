@@ -90,7 +90,7 @@ module Accessibility::PrettyPrinter
   end
 
   ##
-  # Safely create a {pp_checkbox} for the `KAXEnabledAttribute`
+  # Safely create a {#pp_checkbox} for the `KAXEnabledAttribute`
   #
   # If the receiver does not have the attribute then an empty
   # string will be returned.
@@ -105,7 +105,7 @@ module Accessibility::PrettyPrinter
   end
 
   ##
-  # Safely create a {pp_checkbox} for the `KAXFocusedAttribute`
+  # Safely create a {#pp_checkbox} for the `KAXFocusedAttribute`
   #
   # If the receiver does not have the attribute then an empty
   # string will be returned.

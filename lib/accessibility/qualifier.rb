@@ -64,7 +64,7 @@ class Accessibility::Qualifier
   # array. This is done to avoid checking types for each call to
   # {#qualifies?}.
   #
-  # @param criteria [Hash]
+  # @return [void]
   def compile!
     @filters = @criteria.map do |key, value|
       if value.kind_of? Hash
