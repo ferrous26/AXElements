@@ -4,24 +4,19 @@
 # The main AXElements namespace.
 module Accessibility
   # @return [String]
-  VERSION   = '7.0.0.pre3'
+  VERSION = '7.0.0.pre4'
 
   # @return [String]
-  CODE_NAME = case RUBY_ENGINE
-              when 'ruby'    then 'ブースター'
-              when 'rbx'     then 'ブラッキー' # for when rbx has good cext support
-              else 'シャワーズ' # vapor(ware)eon
-              end
+  CODE_NAME = 'ニンフィア'
 
   ##
   # The complete version string for AXElements
   #
   # This differs from {Accessibility::VERSION} in that it also
-  # includes `RUBY_ENGINE` information.
+  # includes {CODE_NAME} information.
   #
   # @return [String]
   def self.version
     "#{VERSION}-#{CODE_NAME}"
   end
-
 end
