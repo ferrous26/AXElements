@@ -73,10 +73,10 @@ class AX::SystemWide < AX::Element
   def hold_modifier key
     code = EventGenerator::CUSTOM[key]
     raise ArgumentError, "Invalid modifier `#{key}' given" unless code
-    KeyCoder.post_event([[code, true]])
+    KeyCoder.post_event([code, true])
     yield
   ensure # if block raises the button might stuck, so ensure it is released
-    KeyCoder.post_event([[code, false]]) if code
+    KeyCoder.post_event([code, false]) if code
     code
   end
 
