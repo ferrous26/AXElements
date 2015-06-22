@@ -1,6 +1,7 @@
 # 7.0.0
 
   * Compatibility with Yosemite (OS X 10.10)
+  * Add DSL#screenshot and AX::Element#screenshot for taking screenshots
   * Remove MacRuby support
   * Allow other Array#method\_missing handlers to function (GH-9)
   * Update ActiveSupport dependency and

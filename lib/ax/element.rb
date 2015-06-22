@@ -424,6 +424,26 @@ class AX::Element
   end
 
   ##
+  # Take a screen shot of the receiving element and save it to disk. If a
+  # file path is not given then the default value will put it on the
+  # desktop. The actual file name will automatically generated with a
+  # timestamp.
+  #
+  # @example
+  #
+  #   app.main_window.screenshot
+  #     # => "~/Desktop/AXElements-ScreenShot-20120422184650.png"
+  #
+  #   app.main_window.screenshot "/Volumes/SecretStash"
+  #     # => "/Volumes/SecretStash/AXElements-ScreenShot-20150622032250.png"
+  #
+  # @param path [#to_s]
+  # @return [String] path to the screenshot
+  def screenshot path = '~/Desktop'
+    capture_screen self, path
+  end
+
+  ##
   # Overriden to respond properly with regards to dynamic attribute
   # lookups, but will return false for potential implicit searches.
   #

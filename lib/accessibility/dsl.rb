@@ -804,43 +804,28 @@ module Accessibility::DSL
   alias_method :graph_for, :graph
 
   ##
-  # Take a screen shot and save it to disk. If a file name and path are
-  # not given then default values will be used; given paths will be
-  # expanded automatically. A timestamp and file extension will always
-  # automatically be appended to the file name.
+  # Take a screen shot and save it to disk. If a file path is not
+  # given then the default value will put it on the desktop. The
+  # actual file name will automatically generated with a timestamp.
   #
   # @example
   #
   #   screenshot
   #     # => "~/Desktop/AXElements-ScreenShot-20120422184650.png"
   #
-  #   screenshot app.title
+  #   screenshot app.main_window
   #     # => "~/Desktop/Safari-20120422184650.png"
   #
-  #   screenshot app.title, "/Volumes/SecretStash"
-  #     # => "/Volumes/SecretStash/Safari-20120422184650.png"
+  #   screenshot app.main_window, "/Volumes/SecretStash"
+  #     # => "/Volumes/SecretStash/AXElements-ScreenShot-20150622032250.png"
   #
-  # @param name [#to_s]
-  # @param dir [#to_s]
+  # @param rect [#to_rect]
+  # @param path [#to_s]
   # @return [String] path to the screenshot
-  def screenshot name = "AXElements-ScreenShot", dir = '~/Desktop'
-    # @todo this could move to its own class, much like
-    #       {Accessibility::Highlighter} and expose more options
-    #       while retaining good defaults
-    dir  = File.expand_path dir.to_s
-    file = "#{dir}/#{name}-#{Time.now.strftime '%Y%m%d%H%M%S'}.png"
-
-    cg_image = CGWindowListCreateImage(CGRectInfinite,
-                                       KCGWindowListOptionOnScreenOnly,
-                                       KCGNullWindowID,
-                                       KCGWindowImageDefault)
-    NSBitmapImageRep
-      .alloc
-      .initWithCGImage(cg_image)
-      .representationUsingType(NSPNGFileType, properties: nil)
-      .writeToFile(file, atomically: false)
-
-    file
+  def screenshot rect = CGRect.new(CGPoint.new(0, 0), CGSize.new(-1, -1)),
+                 path = '~/Desktop'
+    require 'accessibility/screen_shooter'
+    ScreenShooter.shoot rect.to_rect, path
   end
   alias_method :capture_screen, :screenshot
 
