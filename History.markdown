@@ -1,3 +1,7 @@
+# 7.0.1
+
+  * Workaround issue using `DSL#wait_for` with apps that become unresponsive when busy
+
 # 7.0.0
 
   * Compatibility with Yosemite (OS X 10.10)
