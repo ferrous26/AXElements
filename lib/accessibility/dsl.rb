@@ -399,7 +399,17 @@ module Accessibility::DSL
     timeout = filters.delete(:timeout) || 5
     start   = Time.now
     until Time.now - start > timeout
-      result = ancestor.search(descendant, filters, &block)
+      result = nil
+
+      begin
+        result = ancestor.search(descendant, filters, &block)
+      rescue RuntimeError => e
+        # This is a temporary workaround; accessibility_core should
+        # raise a specific error class for this issue or not use
+        # exceptions for this problem at all...
+        raise e unless e.message.match(/application is busy/)
+      end
+
       return result unless result.blank?
       sleep 0.1
     end
@@ -430,7 +440,17 @@ module Accessibility::DSL
     start   = Time.now
     q       = Accessibility::Qualifier.new(child, filters, &block)
     until Time.now - start > timeout
-      result = parent.children.find { |x| q.qualifies? x }
+      result = nil
+
+      begin
+        result = parent.children.find { |x| q.qualifies? x }
+      rescue RuntimeError => e
+        # This is a temporary workaround; accessibility_core should
+        # raise a specific error class for this issue or not use
+        # exceptions for this problem at all...
+        raise e unless e.message.match(/application is busy/)
+      end
+
       return result unless result.blank?
       sleep 0.1
     end
