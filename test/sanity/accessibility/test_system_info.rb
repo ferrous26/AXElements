@@ -69,21 +69,21 @@ class TestAcessibilitySystemInfo < Minitest::Test
 
   def test_num_processors
     procs = Accessibility::SystemInfo.num_processors
-    assert_kind_of Fixnum, procs
+    assert_kind_of Integer, procs
     assert procs > 0
     assert_equal Accessibility::SystemInfo.number_of_processors, procs
   end
 
   def test_num_active_processors
     procs = Accessibility::SystemInfo.num_active_processors
-    assert_kind_of Fixnum, procs
+    assert_kind_of Integer, procs
     assert procs > 0
     assert_equal Accessibility::SystemInfo.number_of_active_processors, procs
   end
 
   def test_total_ram
     ram = Accessibility::SystemInfo.total_ram
-    assert_kind_of Fixnum, ram
+    assert_kind_of Integer, ram
     assert ram > 2.gigabytes # everyone has more than 2GB of RAM these days...right?
     assert_equal Accessibility::SystemInfo.ram, ram
   end
@@ -102,7 +102,7 @@ class TestAcessibilitySystemInfo < Minitest::Test
 
   def test_battery_life_estimate
     est = Accessibility::SystemInfo.battery_life_estimate
-    assert_kind_of Fixnum, est
+    assert_kind_of Integer, est
     assert est >= -1
   end
 

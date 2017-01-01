@@ -107,7 +107,7 @@ class AX::Element
   #
   #   element.pid # => 12345
   #
-  # @return [Fixnum]
+  # @return [Integer]
   def pid
     @ref.pid
   end

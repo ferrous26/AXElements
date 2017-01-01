@@ -134,7 +134,7 @@ module Accessibility::SystemInfo
   #
   #   Accessibility::SystemInfo.num_processors # => 8
   #
-  # @return [Fixnum]
+  # @return [Integer]
   def num_processors
     NSProcessInfo.processInfo.processorCount
   end
@@ -147,7 +147,7 @@ module Accessibility::SystemInfo
   #
   #   Accessibility::SystemInfo.num_active_processors # => 8
   #
-  # @return [Fixnum]
+  # @return [Integer]
   def num_active_processors
     NSProcessInfo.processInfo.activeProcessorCount
   end
@@ -160,7 +160,7 @@ module Accessibility::SystemInfo
   #
   #   Accessibility::SystemInfo.total_ram # => 17179869184
   #
-  # @return [Fixnum]
+  # @return [Integer]
   def total_ram
     NSProcessInfo.processInfo.physicalMemory
   end
@@ -224,7 +224,7 @@ module Accessibility::SystemInfo
   #   # wait a few minutes
   #   battery_life_estimate # => 423
   #
-  # @return [Fixnum]
+  # @return [Integer]
   def battery_life_estimate
     Battery.time_to_empty
   end

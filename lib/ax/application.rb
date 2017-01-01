@@ -122,7 +122,7 @@ class AX::Application < AX::Element
     @app = case arg
            when String
              init_with_bundle_id(arg) || init_with_name(arg) || try_launch(arg)
-           when Fixnum
+           when Integer
              NSRunningApplication.runningApplicationWithProcessIdentifier arg
            when NSRunningApplication
              arg

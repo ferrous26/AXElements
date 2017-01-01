@@ -916,7 +916,7 @@ module Accessibility::DSL
   #
   #   app_with_pid 35843
   #
-  # @param pid [Fixnum]
+  # @param pid [Integer]
   # @return [AX::Application]
   def app_with_pid pid
     AX::Application.new pid
