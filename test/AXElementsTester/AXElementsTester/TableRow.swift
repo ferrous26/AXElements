@@ -10,12 +10,16 @@ import Foundation
 
 @objc class TableRow : NSObject {
 
-    var name  : NSString
-    var value : NSString?
+    var name: String
+    var val: String?
 
-    init(init_name : NSString, init_value : NSString?) {
+    func value() -> Any? {
+        return val
+    }
+
+    init(init_name: String, init_value: String?) {
         name  = init_name
-        value = init_value
+        val   = init_value
     }
     
 }
